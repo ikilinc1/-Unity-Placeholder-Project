@@ -199,11 +199,11 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 628373f5bbe04394bbc64a86d45f7d9d, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeDistance: 1000
+  m_TreeBillboardDistance: 100
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -215,8 +215,8 @@ Terrain:
   m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
   m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
+  m_BakeLightProbesForTrees: 0
+  m_PreserveTreePrototypeLayers: 1
   m_DeringLightProbesForTrees: 1
   m_ScaleInLightmap: 0.8
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
@@ -895,6 +895,256 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882765459}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &983083530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983083532}
+  - component: {fileID: 983083531}
+  m_Layer: 0
+  m_Name: VegetationSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &983083531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983083530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f710250abab6f24a954bdf3c3c1ac64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 0
+  terrains:
+  - {fileID: 329120610}
+  treeTypes:
+  - enabled: 1
+    name: simpleTree
+    seed: 85249
+    probability: 10
+    collisionCheck: 1
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 20}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks: []
+    instanceCount: 1810
+    prefabs:
+    - index: 0
+      probability: 40
+      prefab: {fileID: 8091014481080468456, guid: 9ad03048e8a343c4bace55478d6bcee6,
+        type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: tree
+    seed: 94292
+    probability: 58.5
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1.6340996, y: 30}
+    slopeRange: {x: 0, y: 30}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks: []
+    instanceCount: 22571
+    prefabs:
+    - index: 1
+      probability: 30
+      prefab: {fileID: 4728229099467303455, guid: 873be20559346c945ba9803755143604,
+        type: 3}
+    distance: 3
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: dryTree
+    seed: 85249
+    probability: 10
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 50}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks: []
+    instanceCount: 976
+    prefabs:
+    - index: 2
+      probability: 12.2
+      prefab: {fileID: 436846934784638426, guid: f8bea7d8b7b26104a8fb6f23c2c4b32b,
+        type: 3}
+    distance: 5
+    scaleRange: {x: 0.8, y: 2}
+    sinkAmount: 0
+  - enabled: 1
+    name: purpleTree
+    seed: 79017
+    probability: 10
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 0, y: 20}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks: []
+    instanceCount: 2984
+    prefabs:
+    - index: 3
+      probability: 100
+      prefab: {fileID: 5887348442984103389, guid: ff85b46b3c111504b8b5cd434c49cae0,
+        type: 3}
+    distance: 4
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  grassPrefabs:
+  - enabled: 1
+    name: grass01
+    seed: 2011462329
+    probability: 25
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 1000}
+    slopeRange: {x: 0, y: 20}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: GroundLayer2
+      layerID: 1
+      threshold: 0.726
+    instanceCount: 86538
+    index: 0
+    type: 1
+    renderAsBillboard: 1
+    prefab: {fileID: 0}
+    gpuInstancing: 0
+    billboard: {fileID: 2800000, guid: 91a1945982e98be4d9fe3e3d12fdebd8, type: 3}
+    mainColor: {r: 0.8962264, g: 0.41754603, b: 0.15641688, a: 1}
+    secondaryColor: {r: 0.8867924, g: 0.24561664, b: 0.079476655, a: 1}
+    linkColors: 0
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.47
+  - enabled: 1
+    name: grass02
+    seed: 65777
+    probability: 84
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 314.05673}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: GrassLayer3
+      layerID: 2
+      threshold: 0
+    instanceCount: 354662
+    index: 1
+    type: 1
+    renderAsBillboard: 1
+    prefab: {fileID: 0}
+    gpuInstancing: 0
+    billboard: {fileID: 2800000, guid: cf3069941001b5c46b1f13d4551d0fd9, type: 3}
+    mainColor: {r: 0.745283, g: 0.13007298, b: 0.2778485, a: 1}
+    secondaryColor: {r: 0.26415092, g: 0.06354573, b: 0.12612218, a: 1}
+    linkColors: 0
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: grassFlower10
+    seed: 52204
+    probability: 73.5
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 20}
+    slopeRange: {x: 0, y: 30}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks: []
+    instanceCount: 549345
+    index: 2
+    type: 1
+    renderAsBillboard: 1
+    prefab: {fileID: 0}
+    gpuInstancing: 0
+    billboard: {fileID: 2800000, guid: dcefc591c195a9f468e9157baa03eb4f, type: 3}
+    mainColor: {r: 0.18600924, g: 0.41509432, b: 0.31517196, a: 1}
+    secondaryColor: {r: 0.36379522, g: 0.2481755, b: 0.3679245, a: 1}
+    linkColors: 0
+    minMaxHeight: {x: 0.5, y: 1}
+    minMaxWidth: {x: 1, y: 2}
+    noiseSize: 0.1
+  - enabled: 1
+    name: grassFlower01
+    seed: 5200
+    probability: 47.5
+    collisionCheck: 0
+    rejectUnderwater: 0
+    heightRange: {x: 1, y: 1000}
+    slopeRange: {x: 37.021275, y: 60}
+    curvatureRange: {x: 0.4893617, y: 1}
+    layerMasks: []
+    instanceCount: 3995
+    index: 3
+    type: 1
+    renderAsBillboard: 1
+    prefab: {fileID: 0}
+    gpuInstancing: 0
+    billboard: {fileID: 2800000, guid: 5733619f617fd954cac22d3d11fd1b93, type: 3}
+    mainColor: {r: 0.15363665, g: 0.5283019, b: 0.102171585, a: 1}
+    secondaryColor: {r: 0.5283019, g: 0.48451805, b: 0.067283735, a: 1}
+    linkColors: 0
+    minMaxHeight: {x: 0.5, y: 3}
+    minMaxWidth: {x: 1, y: 3}
+    noiseSize: 0.1
+  terrainSettings:
+    drawTreesAndFoliage: 1
+    perservePrefabLayer: 1
+    treeLightProbes: 0
+    treeDistance: 1000
+    billboardStart: 300
+    maxMeshTrees: 50
+    grassDistance: 200
+    grassDensity: 1
+    windStrength: 0.15
+    windSpeed: 1
+    windFrequency: 2
+    wintTint: {r: 1, g: 1, b: 1, a: 1}
+  cellSize: 64
+  cellDivisions: 4
+  highPrecisionCollision: 1
+  collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  terrainMinMaxHeight: {x: 0, y: 115.204025}
+  detailResolution: 256
+  detailResolutionIndex: 0
+  grassPatchSize: 128
+  grassPatchSizeIndex: 4
+  tempColliders: []
+  waterHeight: 0
+  autoRespawnTrees: 1
+--- !u!4 &983083532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983083530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 622.9369, y: 47.39159, z: 770.84265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1050703206
 MonoBehaviour:
   m_ObjectHideFlags: 0
